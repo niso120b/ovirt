@@ -1,0 +1,7 @@
+---
+
+- name: "CentOS | yum install engine"
+  yum:
+    name: "{{ovirt_engine_type}}"
+    state: installed
+    update_cache: yes

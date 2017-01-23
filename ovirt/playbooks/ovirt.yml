@@ -1,0 +1,21 @@
+---
+
+- hosts: database
+  remote_user: root
+  become: yes
+  roles:
+    - ovirt-common
+    - ovirt-engine-db
+
+- hosts: engine
+  remote_user: root
+  roles:
+    - ovirt-common
+    - ovirt-engine-install-packages
+    - ovirt-engine-setup
+
+- hosts: hypervisors
+  remote_user: root
+  roles:
+    - ovirt-common
+

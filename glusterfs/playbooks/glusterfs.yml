@@ -1,0 +1,9 @@
+---
+
+- hosts: gluster
+  remote_user: root
+  become: yes
+  roles:
+    - firewall
+    - glusterfs
+    - init-glusterfs

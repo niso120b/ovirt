@@ -1,0 +1,20 @@
+---
+
+- name: "CentOS | install libselinux-python for ansible"
+  yum:
+    name: libselinux-python
+    state: "present"
+
+- name: "CentOS | creating directory repo-backup in yum.repos.d"
+  file:
+    path: /tmp/repo-backup
+    state: directory
+
+- name: "CentOS | create repository backup"
+  shell: 'cp /etc/yum.repos.d/*.repo /tmp/repo-backup'
+
+- name: "CentOS | install rpm repository package"
+  yum:
+    name: "{{ ovirt_rpm_repo }}"
+    state: present
+  when: ovirt_rpm_repo

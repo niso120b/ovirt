@@ -1,0 +1,17 @@
+[engine:vars]
+ansible_ssh_pass=qwe123
+
+[engine]
+192.168.1.1
+
+[database]
+192.168.1.2
+
+[database:vars]
+ansible_ssh_pass=qwe123
+
+[hypervisors:vars]
+ansible_ssh_pass=qwe123
+
+[hypervisors]
+192.168.1.3
